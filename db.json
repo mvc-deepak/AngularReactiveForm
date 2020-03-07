@@ -45,9 +45,9 @@
     },
     {
       "id": 3,
-      "fullName": "deepak k",
+      "fullName": "guptade",
       "contactPreference": "phone",
-      "email": "john@dell.com",
+      "email": "guptade@dell.com",
       "phone": "9789067924",
       "skills": [
         {
@@ -59,6 +59,20 @@
           "skillName": "sql",
           "experienceInYears": "5",
           "proficiency": "advanced"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fullName": "deepak",
+      "contactPreference": "email",
+      "email": "test@dell.com",
+      "phone": "",
+      "skills": [
+        {
+          "skillName": "Angular",
+          "experienceInYears": "7",
+          "proficiency": "beginner"
         }
       ]
     }
