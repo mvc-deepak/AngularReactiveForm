@@ -1,1 +1,28 @@
 json-server --watch db.json
+ng serve --open (short cut command : ng s -o)
+
+node -v
+npm -v
+
+If you do not have Angular CLI installed already, execute the following command and it will install the latest version. 
+npm install -g @angular/cli
+
+If you already have Angular CLI installed, and you want to upgrade to latest version, then execute following command 
+npm install -g @angular/cli@latest
+
+Create New Angular Project
+ng new Angular6Project -d
+ng new Angular6Project --skip-tests
+
+Create a separate routing module 
+ng generate module app-routing --flat=true --module=app
+ng g m app-routing --flat=true -m=app
+
+Angular CLI configuration file
+angular-cli.json. In Angular 6, it is renamed to just angular.json
+
+To confirm this Angular application is using Angular Version 6, 
+open package.json file and notice all the Angular packages version is 6.1.0. 
+
+
+

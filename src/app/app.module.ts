@@ -9,6 +9,15 @@ import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './employee/employee.service';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { CustomerModule } from './customer/customer.module';
+
+//Moved to AppRoutingModule
+// const appRoutes: Routes = [
+//   { path: 'home1', component: Home1Component },
+//   { path: 'home2', component: Home1Component },
+//   { path: '', redirectTo: '/home', pathMatch: 'full' },
+//   { path: '**', component: PageNotFoundComponent }
+// ];
 
 
 @NgModule({
@@ -20,10 +29,16 @@ import { PageNotFoundComponent } from './page-not-found.component';
     // ListEmployeesComponent,
 
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+  
   ],
   imports: [
     BrowserModule,
+
+    //feature modules should be imported before AppRoutingModule 
+
+    //Eager Loading
+    CustomerModule,
 
     // Lazy Load this Module
     // EmployeeModule,
@@ -32,10 +47,14 @@ import { PageNotFoundComponent } from './page-not-found.component';
     HttpClientModule,
     ReactiveFormsModule,
 
+    //Moved to AppRoutingModule
+    //RouterModule.forRoot(appRoutes)
+
     // Moved to top, otherwise dont work
     // EmployeeModule 
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

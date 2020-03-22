@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, NoPreloading } from '@angular/router';
-import { ListEmployeesComponent } from './employee/list-employees.component';
-import { CreateEmployeeComponent } from './employee/create-employee.component';
+import { Routes, RouterModule, NoPreloading, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { CustomPreloadingService } from './custom-preloading.service';
-
-
+ 
 //const routes: Routes = [];
 
 // last route path is empty. This specifies route to redirect to if client side path is empty.
 const appRoutes: Routes = [
+
   { path: 'home', component: HomeComponent },
 
   // Moved to EmployeeRoutingModule
@@ -21,7 +19,13 @@ const appRoutes: Routes = [
   // redirect to the home route if the client side route path is empty
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
+  //Lazy Load Employee Module
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
+
   // Lazy Load Employee Module
+  //{ path: 'employees', loadChildren: './employee/employee.module#EmployeeModule' }
+
+  // Custom Preload strategy
   {
     path: 'employees',
     data: { preload: true },
@@ -35,8 +39,17 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  //preloadingStrategy : NoPreloading, or PreloadAllModules, or Custom
-  imports: [RouterModule.forRoot(appRoutes, { preloadingStrategy: CustomPreloadingService })],
+  
+  imports: [
+    //preloadingStrategy : NoPreloading
+    //RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
+
+    //preloadingStrategy : PreloadAllModules
+    //RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
+
+    //preloadingStrategy: Custom 
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: CustomPreloadingService })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

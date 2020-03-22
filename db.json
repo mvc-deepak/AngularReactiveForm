@@ -9,12 +9,12 @@
       "skills": [
         {
           "skillName": "C#",
-          "experienceInYears": 1,
+          "experienceInYears": "4",
           "proficiency": "beginner"
         },
         {
           "skillName": "Java",
-          "experienceInYears": 2,
+          "experienceInYears": "3",
           "proficiency": "intermediate"
         }
       ]
@@ -64,14 +64,28 @@
     },
     {
       "id": 4,
-      "fullName": "deepak",
+      "fullName": "fdfsdf",
       "contactPreference": "email",
       "email": "test@dell.com",
       "phone": "",
       "skills": [
         {
-          "skillName": "Angular",
+          "skillName": "fdfdffffd",
           "experienceInYears": "7",
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fullName": "fgg",
+      "contactPreference": "email",
+      "email": "456@dell.com",
+      "phone": "34",
+      "skills": [
+        {
+          "skillName": "s",
+          "experienceInYears": "2",
           "proficiency": "beginner"
         }
       ]
