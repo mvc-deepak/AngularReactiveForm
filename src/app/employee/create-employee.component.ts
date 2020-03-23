@@ -71,6 +71,10 @@ export class CreateEmployeeComponent implements OnInit {
       }, { validator: matchEmails }),
       phone: [''],
 
+    // Create skills FormArray using injected FormBuilder class array() method. 
+    // At the moment, in the created FormArray we only have one FormGroup instance that is
+    // returned by addSkillFormGroup() method
+
       skills: this.fb.array(
         [this.addSkillFormGroup()]
       )
