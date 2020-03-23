@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-customerdetails',
@@ -15,7 +15,11 @@ export class CustomerdetailsComponent implements OnInit {
     // ngOnInit ensures FormGroup and it's form controls are created when component is initialised
     ngOnInit() {
       this.customerForm = new FormGroup({
+        
         fullName: new FormControl(),
+        
+        //fullName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(10),
+
         email: new FormControl(),
        
         //Nested Form Group
