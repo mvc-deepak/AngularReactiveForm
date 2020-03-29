@@ -165,14 +165,14 @@ export class CreateEmployeeComponent implements OnInit {
   // Notice, each key in this object has the same name as the
   // corresponding form control
   formErrors = {
-    // 'fullName': '',
-    // 'email': '',
-    // 'confirmEmail': '',
-    // 'emailGroup': '',
-    // 'phone': '',
-    // 'skillName': '',
-    // 'experienceInYears': '',
-    // 'proficiency': ''
+    'fullName': '',
+    'email': '',
+    'confirmEmail': '',
+    'emailGroup': '',
+    'phone': '',
+    'skillName': '',
+    'experienceInYears': '',
+    'proficiency': ''
   };
 
 

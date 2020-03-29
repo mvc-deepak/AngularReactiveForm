@@ -2,26 +2,31 @@
   "employees": [
     {
       "id": 1,
-      "fullName": "Mark",
+      "fullName": "Mark T",
       "contactPreference": "email",
       "email": "mark@dell.com",
       "phone": "5641238971",
       "skills": [
         {
           "skillName": "C#",
-          "experienceInYears": "4",
+          "experienceInYears": "43",
           "proficiency": "beginner"
         },
         {
           "skillName": "Java",
-          "experienceInYears": "3",
+          "experienceInYears": "32",
           "proficiency": "intermediate"
+        },
+        {
+          "skillName": "Angular",
+          "experienceInYears": "23",
+          "proficiency": "beginner"
         }
       ]
     },
     {
       "id": 2,
-      "fullName": "John",
+      "fullName": "John D",
       "contactPreference": "phone",
       "email": "john@dell.com",
       "phone": "3242138971",
@@ -45,7 +50,7 @@
     },
     {
       "id": 3,
-      "fullName": "guptade",
+      "fullName": "Deepak G",
       "contactPreference": "phone",
       "email": "guptade@dell.com",
       "phone": "9789067924",
@@ -64,7 +69,7 @@
     },
     {
       "id": 4,
-      "fullName": "fdfsdf",
+      "fullName": "Ryan S",
       "contactPreference": "email",
       "email": "test@dell.com",
       "phone": "",
@@ -78,17 +83,25 @@
     },
     {
       "id": 5,
-      "fullName": "fgg",
+      "fullName": "Smith",
       "contactPreference": "email",
-      "email": "456@dell.com",
+      "email": "smith@dell.com",
       "phone": "34",
       "skills": [
         {
-          "skillName": "s",
-          "experienceInYears": "2",
+          "skillName": "Java",
+          "experienceInYears": "5",
           "proficiency": "beginner"
         }
       ]
+    },
+    {
+      "id": 6,
+      "fullName": "Kate S",
+      "contactPreference": "email",
+      "email": "test@dell.com",
+      "phone": "98",
+      "skills": []
     }
   ]
 }

@@ -24,5 +24,17 @@ angular-cli.json. In Angular 6, it is renamed to just angular.json
 To confirm this Angular application is using Angular Version 6, 
 open package.json file and notice all the Angular packages version is 6.1.0. 
 
+===========================
+Angular 8 to 9
+Before starting to update to v9. You need to update @angular/cli and @angular/core to the latest version of v8.
+ng update @angular/core@8 @angular/cli@8 --force
+Then start to update Angular to version 9
+RC Version 
+ng update @angular/cli @angular/core — next
+Major Release
+ng update @angular/cli @angular/core
+
+
+
 
 

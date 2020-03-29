@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-system-setting',
@@ -39,12 +39,22 @@ export class SystemSettingComponent implements OnInit {
         email: ['', [Validators.required, validateEmailDomain('pragimtech.com')]],
         confirmEmail: ['', [Validators.required]],
       }, { validator: matchEmails }),
-      
-      skills: this.fb.group({
-        skillName: ['', Validators.required],
-        experienceInYears: ['', Validators.required],
-        proficiency: ['', Validators.required]
-      }),
+
+      //Form Array
+      // Create skills FormArray using injected FormBuilder class array() method. 
+      // At the moment, in the created FormArray we only have one FormGroup instance that is
+      // returned by addSkillFormGroup() method
+      skills: this.fb.array([
+        this.addSkillFormGroup()
+      ])
+
+      //Form Group
+      // skills: this.fb.group({
+      //   skillName: ['', Validators.required],
+      //   experienceInYears: ['', Validators.required],
+      //   proficiency: ['', Validators.required]
+      // }),
+
     });
 
     // Subscribe to contactPreference form control valueChanges observable 
@@ -77,6 +87,17 @@ export class SystemSettingComponent implements OnInit {
     );
 
   };
+
+
+
+  addSkillFormGroup(): FormGroup {
+    return this.fb.group({
+      skillName: ['', Validators.required],
+      experienceInYears: ['', Validators.required],
+      proficiency: ['', Validators.required]
+    });
+  }
+
 
   // If the Selected Radio Button value is "phone", then add the
   // required validator function otherwise remove it
@@ -143,6 +164,10 @@ export class SystemSettingComponent implements OnInit {
     },
   };
 
+  addSkillButtonClick(): void {
+    (<FormArray>this.systemsettingForm.get('skills')).push(this.addSkillFormGroup());
+  }
+  
 
   onValidateFormClick(): void {
     this.logValidationErrors1(this.systemsettingForm);
@@ -203,13 +228,26 @@ export class SystemSettingComponent implements OnInit {
           }
         }
       }
-  
+
       if (abstractControl instanceof FormGroup) {
         this.logValidationErrors(abstractControl);
       }
+
+    // We need this additional check to get to the FormGroup
+    // in the FormArray and then recursively call this
+    // logValidationErrors() method to fix the broken validation
+    if (abstractControl instanceof FormArray) {
+      for (const control of abstractControl.controls) {
+        if (control instanceof FormGroup) {
+          this.logValidationErrors(control);
+        }
+      }
+    }
+
+
     });
   }
-  
+
 
   logValidationErrors2(group: FormGroup = this.systemsettingForm): void {
     // Loop through each control key in the FormGroup

@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
   //Lazy Load Employee Module
-  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 
   // Lazy Load Employee Module
   //{ path: 'employees', loadChildren: './employee/employee.module#EmployeeModule' }
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
   {
     path: 'employees',
     data: { preload: true },
-    loadChildren: './employee/employee.module#EmployeeModule'
+    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
   },
 
   { path: '**', component: PageNotFoundComponent }// wild card route

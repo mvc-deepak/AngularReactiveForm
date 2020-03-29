@@ -97,7 +97,7 @@
                     </div>
                 </div>
 
-                <div formArrayName="skills" *ngFor="let skill of employeeForm.get('skills').controls; let i = index">
+                <div formArrayName="skills" *ngFor="let skill of employeeForm.get('skills')['controls']; let i = index">
                     <hr *ngIf="i>0">
                     <!-- <div formGroupName="skills"> -->
                     <div [formGroupName]="i">
@@ -115,7 +115,7 @@
                                     Skill Name is required
                                 </span>
                             </div>
-                            <div class="col-sm-1" *ngIf="employeeForm.get('skills').length>1">
+                            <div class="col-sm-1" *ngIf="employeeForm.get('skills')['controls'].length>1">
                                 <button type="button" class="btn btn-danger btn-sm pull-right" title="Delete Skill" (click)="removeSkillButtonClick(i)">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
